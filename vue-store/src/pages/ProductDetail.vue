@@ -30,9 +30,11 @@ function goBack() {
           <img class="imagedetails" :src="product.imageUrl" />
 
     <h1>{{ product.name }}</h1>
+    <h2>{{ product.category }}</h2>
     <p>${{ product.price }}</p>
+  
 
-    <button @click="addToCart">Add to Cart</button>
+    <button @click="addToCart"  style="cursor:pointer;">🛒 Add to Cart</button>
   </div>
 
   <div v-else>

@@ -24,7 +24,7 @@ function decreaseQty(item) {
 </script>
 
 <template>
-  <h1>Your Cart</h1>
+  <h1>Checkout</h1>
 
   <div v-if="cart.length === 0">
     Cart is empty
@@ -32,6 +32,7 @@ function decreaseQty(item) {
 
   <ul v-else>
     <li v-for="item in cart" :key="item.id">
+       <img class="imagecart" :src="item.imageUrl" />
       <strong>{{ item.name }}</strong>
       — ${{ item.price }} × {{ item.qty }}
       = ${{ item.price * item.qty }}
@@ -43,10 +44,13 @@ function decreaseQty(item) {
 
   <h2>Total: x{{ total }}</h2>
 
-  <button
-    @click="router.push('/checkout')"
-    :disabled="cart.length === 0"
-  >
-    Proceed to Checkout
-  </button>
 </template>
+
+<style>
+.back {
+  margin-bottom: 15px;
+}
+.imagecart {
+  width: 20%;
+}
+</style>
